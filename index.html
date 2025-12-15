@@ -1,126 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mehri Sadri | Data Science for Local Impact</title>
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --card-border: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --accent: #6ee7ff;
+      --accent2: #a78bfa;
+    }
+
+    * { box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+
+    body{
+      margin: 0;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.6;
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(110,231,255,.22), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(167,139,250,.20), transparent 60%),
+        radial-gradient(700px 450px at 50% 95%, rgba(110,231,255,.10), transparent 60%),
+        var(--bg);
+    }
+
+    a{
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.20);
+      padding-bottom: 1px;
+      transition: border-color .2s ease, color .2s ease;
+    }
+    a:hover{
+      color: white;
+      border-bottom-color: rgba(110,231,255,.85);
+    }
+
+    .container{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 16px 72px;
+    }
+
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 16px 18px;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+    }
+
+    header h1{
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: .3px;
+    }
+
+    nav{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    nav a{
+      border-bottom: none;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    nav a:hover{
+      border-color: rgba(110,231,255,.45);
+      background: rgba(110,231,255,.10);
+    }
+
+    h2{
+      margin: 32px 0 10px;
+      font-size: 1.05rem;
+      letter-spacing: .25px;
+    }
+
+    h2::after{
+      content: "";
+      display: block;
+      height: 2px;
+      width: 76px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .muted{
+      color: var(--muted);
+      margin: 18px 4px 0;
+      font-size: .98rem;
+    }
+
+    .card{
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin: 14px 0;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.20);
+    }
+
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+    li{ margin: 6px 0; }
+
+    /* subtle scroll animations */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .6s ease, transform .6s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.show{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce){
+      .reveal{ opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
 <body>
-  <header>
-    <h1>Mehri Sadri</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#focus">Focus</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="container">
 
-  <p class="muted">
-    Data science for local impact · public policy · ethical AI
-  </p>
+    <header class="reveal">
+      <h1>Mehri Sadri</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#work">Work</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <h2 id="about">About</h2>
-  <div class="card">
-    <p>
-      I’m Mehri (she/her), a data scientist and founder building
-      <strong>predictive analytics systems for local governments and nonprofits</strong>.
+    <p class="muted reveal">
+      Data science for local governments · nonprofits · public good
     </p>
-    <p>
-      My work focuses on translating public data into tools that improve
-      service delivery, resource allocation, and community outcomes—
-      especially in housing, public health, and social services.
-    </p>
-    <p>
-      I’m currently completing my M.S. in Data Analytics for Public Policy at
-      <strong>Carnegie Mellon University</strong>.
-    </p>
+
+    <h2 id="about" class="reveal">About</h2>
+    <div class="card reveal">
+      <p>
+        I’m Mehri (she/her), a data scientist and founder building
+        <strong>predictive analytics systems for local governments and nonprofits</strong>.
+      </p>
+      <p>
+        My work translates public data into tools that improve
+        service delivery, resource allocation, and community outcomes—
+        especially in housing, public health, and social services.
+      </p>
+      <p>
+        I’m currently completing my M.S. in Data Analytics for Public Policy at
+        <strong>Carnegie Mellon University</strong>.
+      </p>
+    </div>
+
+    <h2 id="focus" class="reveal">What I Work On</h2>
+    <div class="card reveal">
+      <ul>
+        <li><strong>Predictive modeling</strong> for public health, housing, and social services</li>
+        <li><strong>Applied econometrics & panel regression</strong> for policy analysis</li>
+        <li><strong>Geospatial analysis</strong> to identify service gaps and inequities</li>
+        <li><strong>Ethical & safe AI</strong> in public-sector deployments</li>
+        <li><strong>Decision support</strong> for non-technical government stakeholders</li>
+      </ul>
+    </div>
+
+    <h2 id="work" class="reveal">Selected Work</h2>
+
+    <div class="card reveal">
+      <h3>sr.cag — Predictive Analytics for Local Governments</h3>
+      <p>
+        Founder and Director of a nonprofit SaaS initiative deploying
+        Python-based machine learning tools for community organizations
+        and local public agencies.
+      </p>
+      <p>
+        I’ve led cross-functional teams to build end-to-end data pipelines,
+        geospatial dashboards, and predictive models that help
+        organizations identify coverage gaps and optimize outreach.
+      </p>
+      <p>
+        <a href="https://srcagmlsolutionsusa.com" target="_blank">Website</a> ·
+        <a href="https://github.com/persianpersuasion" target="_blank">Code</a>
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Local Government — County of San Diego</h3>
+      <p>
+        Former Community Outreach Analyst for the San Diego County Board of Supervisors,
+        where I built data-driven outreach systems using SQL, CRM data,
+        and GIS tools to support large-scale civic engagement initiatives.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <h3>Applied Research & Analytics</h3>
+      <p>
+        At Data Science Alliance, I conducted panel regression analyses
+        forecasting homelessness trends and built automated dashboards
+        supporting data-informed policy decisions.
+      </p>
+      <p>
+        I also co-authored peer-reviewed research applying predictive analytics
+        to healthcare supply chains, achieving significant cost savings
+        through improved resource allocation.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <h3>AI Safety & Policy Research (CMU)</h3>
+      <p>
+        Fellow at CMU’s Swartz Center for Entrepreneurship and contributor
+        to AI red-teaming research with the AI Safety Initiative (CASI),
+        focused on civil rights, accountability, and public-sector risk.
+      </p>
+    </div>
+
+    <h2 id="publications" class="reveal">Publications</h2>
+
+    <div class="card reveal">
+      <h3>Equal Protection in the Age of AI: Navigating Civil Rights in Housing with Machine Learning (2025)</h3>
+      <p>
+        Peer-reviewed article examining how AI-driven tenant screening and rental-risk scoring
+        can reinforce bias, with legal and technical safeguards to strengthen civil rights protections.
+      </p>
+      <p class="muted">
+        Add link: eScholarship / PDF when you have it handy.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <h3>A Hybrid Human–Automated Red-Team Marketplace for AI Systems (Ongoing)</h3>
+      <p>
+        Engineering a proof-of-concept marketplace combining automated and human adversarial testing
+        to improve system safety, accountability mechanisms, and continuous assurance.
+      </p>
+    </div>
+
+    <h2 id="contact" class="reveal">Contact</h2>
+    <div class="card reveal">
+      <p><strong>Email:</strong> msadri@andrew.cmu.edu</p>
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/mehri-sadri-8a1037246/" target="_blank">
+          mehri-sadri
+        </a>
+      </p>
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/persianpersuasion" target="_blank">
+          persianpersuasion
+        </a>
+      </p>
+    </div>
+
   </div>
 
-  <h2 id="focus">What I Work On</h2>
-  <div class="card">
-    <ul>
-      <li><strong>Predictive modeling</strong> for public health, housing, and social services</li>
-      <li><strong>Applied econometrics & panel regression</strong> for policy analysis</li>
-      <li><strong>Geospatial analysis</strong> to identify service gaps and inequities</li>
-      <li><strong>Ethical & safe AI</strong> in public-sector deployments</li>
-      <li><strong>Decision support</strong> for non-technical government stakeholders</li>
-    </ul>
-  </div>
+  <script>
+    // Subtle reveal-on-scroll (IntersectionObserver)
+    const els = document.querySelectorAll('.reveal');
 
-  <h2 id="work">Selected Work</h2>
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target); // animate once
+        }
+      }
+    }, { threshold: 0.12 });
 
-  <div class="card">
-    <h3>sr.cag — Predictive Analytics for Local Governments</h3>
-    <p>
-      Founder and Director of a nonprofit SaaS initiative deploying
-      Python-based machine learning tools for community organizations
-      and local public agencies.
-    </p>
-    <p>
-      I’ve led cross-functional teams to build end-to-end data pipelines,
-      geospatial dashboards, and predictive models that helped
-      service organizations identify coverage gaps and optimize outreach.
-    </p>
-    <p>
-      Recent work includes forecasting Narcan demand by ZIP code using
-      Random Forest regression, neighborhood-level sentiment modeling,
-      and interactive mapping of public welfare indicators.
-    </p>
-    <p>
-      <a href="https://srcagmlsolutionsusa.com" target="_blank">Website</a> ·
-      <a href="https://github.com/persianpersuasion" target="_blank">Code</a>
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Local Government — County of San Diego</h3>
-    <p>
-      Former Community Outreach Analyst for the San Diego County Board of Supervisors.
-      I built data-driven outreach systems using SQL, CRM data, and GIS tools
-      to support large-scale civic engagement initiatives.
-    </p>
-    <p>
-      This work directly informed county operations reaching
-      nearly one-fifth of San Diego County residents.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Applied Research & Analytics</h3>
-    <p>
-      At Data Science Alliance, I conducted panel regression analyses
-      forecasting homelessness trends across West Coast states and built
-      automated dashboards for policy-facing teams.
-    </p>
-    <p>
-      I also co-authored peer-reviewed research applying predictive analytics
-      to healthcare supply chains, achieving substantial cost savings through
-      data-driven resource allocation.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>AI Safety & Policy Research (CMU)</h3>
-    <p>
-      Fellow at CMU’s Swartz Center for Entrepreneurship and contributor to
-      AI red-teaming research with the AI Safety Initiative (CASI).
-    </p>
-    <p>
-      My work examines how machine learning systems intersect with civil rights,
-      accountability, and public-sector risk.
-    </p>
-  </div>
-
-  <h2 id="contact">Contact</h2>
-  <div class="card">
-    <p>
-      <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/mehri-sadri-8a1037246/" target="_blank">
-        mehri-sadri
-      </a>
-    </p>
-    <p>
-      <strong>GitHub:</strong>
-      <a href="https://github.com/persianpersuasion" target="_blank">
-        persianpersuasion
-      </a>
-    </p>
-    <p>
-      <strong>Email:</strong> msadri@andrew.cmu.edu
-    </p>
-  </div>
+    els.forEach(el => observer.observe(el));
+  </script>
 </body>
+</html>
